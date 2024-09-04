@@ -1,27 +1,31 @@
-import Head from 'next/head'
+import Image from 'next/image';
+import bgGif from '../public/background.gif';
 
 export default function Home() {
     return (
-        <div className="min-h-screen bg-gradient-to-br from-[#68A5DE] via-[#68CADE] to-[#7768DE] flex flex-col items-center justify-center p-4">
-            <Head>
-                <title>Ari Tanem - Coming Soon</title>
-                <meta name="description" content="Ari Tanem - Coming Soon" />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
+        <div className="relative h-screen flex flex-col items-center justify-center">
+            <div className="absolute inset-0 w-full h-full">
+                <Image
+                    src={bgGif}
+                    alt="Background"
+                    layout="fill"
+                    objectFit="cover"
+                    priority
+                />
+            </div>
 
-            <main className="text-center">
-                <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 drop-shadow-lg">
-                    Ari Tanem
-                </h1>
-                <p className="text-2xl md:text-3xl text-white mb-8 drop-shadow-md">
-                    Coming Soon
-                </p>
-                <div className="w-24 h-1 bg-white opacity-75 mx-auto rounded-full"></div>
-            </main>
+            <div className="relative z-10 flex-grow flex items-center justify-center">
+                <div className="text-center text-white">
+                    <h1 className="text-4xl md:text-6xl font-bold">Ari Tanem</h1>
+                    <p className="text-xl md:text-2xl mt-4">Coming Soon</p>
+                </div>
+            </div>
 
-            <footer className="absolute bottom-4 text-sm text-white text-opacity-75">
+            <footer className="relative z-10 p-4 text-center text-sm text-white text-opacity-75">
                 © {new Date().getFullYear()} Ari Tanem. All rights reserved.
             </footer>
+
+            <div className="absolute inset-0 bg-black opacity-40"></div>
         </div>
-    )
+    );
 }
