@@ -6,7 +6,7 @@ export default function Home() {
             <Head>
                 <title>Ari Tanem - Coming Soon</title>
                 <meta name="description" content="Ari Tanem - Coming Soon" />
-                <link rel="icon" href="/favicon.ico" />
+                {/*<link rel="icon" href="/favicon.ico" />*/}
             </Head>
 
             <main className="text-center">
